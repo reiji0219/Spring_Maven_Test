@@ -10,8 +10,9 @@ public class Demo1Application
 	{
 		SpringApplication.run( Demo1Application.class, args );
 		
-			System.out.println( "終わりだよー" );
+//			System.out.println( "終わりだよー" );
 	}
+	
 /*
  	コマンドプロンプトで下記を打ち込むと「8080」の通信状態が分かる。-ano を -? でヘルプ
  		-anoは a, n, o の複合技。数字を換えれば色々確認出来る
