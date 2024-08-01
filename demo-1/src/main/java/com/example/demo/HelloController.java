@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 @Controller
 public class HelloController 
 {
-	@Autowired							//この2行は「postgreSQL」に後でくっつける為に記述
-	JdbcTemplate jdbcTemplate; 
+	@Autowired							//この2行は「postgreSQL」と連携する為に記述
+	JdbcTemplate jdbcTemplate; 	//DBのデータを読み込む為に27～29行目を記述
 	
 	@GetMapping("/")					//「Hello」と言う名の「HTMLファイル」を探す為の記述
 	public String index(){				//「http://localhost:8080/」とアドレスバーに記述すると
@@ -24,10 +24,11 @@ public class HelloController
 	
 	@PostMapping("name")
 	public String name(@RequestParam( "name" ) String name, Model model ) {
-			List<Map<String,Object>> list;
-			list = jdbcTemplate.queryForList( "select * from users" );
-			model.addAttribute( "users", list );
+			List<Map<String,Object>> list;									//
+			list = jdbcTemplate.queryForList( "select * from users" );//この3行を記述する
+			model.addAttribute( "users", list );								//
 			model.addAttribute( "name", name );
 		return "name";
 	}
+	
 }
