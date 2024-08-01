@@ -6,6 +6,7 @@
 </head>
 <body>
 	<p>ようこそ<span th:text = "${name}">あなた</span>さん</p>
+
 	
 	<span>現在登録されているユーザー一覧</span>
 	<table border="1">
@@ -18,14 +19,7 @@
 			<td th:text="${ user .get('name')}"></td>
 		</tr>
 	</table>
+	
+	
 </body>
-
-
-
-
-
-
-
-
-
 </html>
